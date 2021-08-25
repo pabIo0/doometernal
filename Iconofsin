@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void menu()
+{
+
+setlocale(LC_ALL, "Portuguese");
+system("cls");
+system("color 02");
+
+ printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
+printf(" \n\t\t CALCULADORA CEFET-MG\n\n");
+printf(" \n1 - SOMAR\n");
+printf(" \n2 - SUBTRAIR\n");
+printf(" \n3 - MULTIPLICAR\n");
+printf(" \n4 - DIVIDIR\n");
+printf("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n\n\n\n\n");
+
+}
+
+void calcula(int opc,float n1,float n2)
+{
+float resultado;
+
+ if (opc==1)
+{
+resultado=n1+n2;
+}
+if (opc==2)
+{
+resultado=n1-n2;
+}
+if (opc==3)
+{
+resultado=n1*n2;
+}
+if (opc==4)
+{
+resultado=n1/n2;
+}
+
+ system("color 17");
+printf("============================================================\n\n");
+printf(" \n\n\t\t RESULTADO >>>> %.2f\n",resultado);
+printf("============================================================\n\n");
+
+ /* getch();*/
+system("pause");
+
+}
+
+int main()
+{
+float v1,v2,resposta;
+int op,i;
+
+ for (i=0;i<3;i++)
+{
+menu();
+
+ printf("\n Informe o número da opcao desejada>>> ");
+scanf("%d",&op);
+
+ printf("\n Informe o primeiro valor>>> ");
+scanf("%f",&v1);
+
+ printf("\n Informe o segundo valor>>> ");
+scanf("%f",&v2);
+
+ calcula(op,v1,v2);
+
+ }
+return 0;
+}
