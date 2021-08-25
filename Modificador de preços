@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <locale.h>
 
+//programa modificador de preços
+
 void desconto(float p)
 {
 
