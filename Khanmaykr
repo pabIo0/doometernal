@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+void desconto(float p)
+{
+
+setlocale(LC_ALL, "Portuguese");
+system("cls");
+system("color 03");
+
+float novovalor;
+
+ novovalor=p/1.10;
+
+ printf("============================================================\n\n");
+printf(" \n\n\t\t PRECO ATUALIZADO DENTRO DA FUNCAO\n");
+printf("============================================================\n\n");
+
+ printf(" \n R$%.2f\n",novovalor);
+
+}
+
+float aumento(float p)
+{
+float novovalor;
+novovalor=p*1.10;
+
+ printf("============================================================\n\n");
+printf(" \n\n\t\t PRECO ATUALIZADO DENTRO DA FUNCAO\n");
+printf("============================================================\n\n");
+printf(" \n R$%.2f\n",novovalor);
+
+ return novovalor;
+
+}
+
+int main()
+{
+float pr,valoraumento,valordesconto;
+char nome[10];
+
+printf("============================================================\n\n");
+printf(" \n\n\t\t CADASTRO DE PRODUTOS\n");
+printf("============================================================\n\n");
+
+ printf("\n\nInforme o nome do primeiro produto\n");
+gets (nome);
+
+ printf("\nInforme o preco do primeiro produto\n");
+scanf("%f",&pr);
+
+ if(pr>50)
+{
+
+ desconto(pr);
+
+ printf("============================================================\n\n");
+printf(" \n\n\t\t PRECO ORIGINAL (PR1)-sem alteracao\n");
+printf("============================================================\n\n");
+printf(" \n R$%.2f\n",pr);
+
+}
+if(pr<50)
+{
+pr=aumento(pr);
+
+ printf("============================================================\n\n");
+printf(" \n\n\t\t PRECO ORIGINAL (PR1) - com alteracao\n");
+printf("============================================================\n\n");
+printf(" \n R$%.2f\n",pr);
+}
+
+return 0;
+}
